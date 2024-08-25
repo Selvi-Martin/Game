@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Open Ocean</title>
+        <link rel="stylesheet" href="ocean.css">
+    </head>
+    <body>
+        <h1>Open Ocean</h1>
+        <h1>Score: <span id="score">0</span></h1>
+        <h2><div id="timer" style="text-align: center;">Time: 0 seconds</div></h2>
+        <div class="video-container">
+            <video autoplay muted loop id="video-bg">
+                <source src="img/ocean-vmake.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="playerNameModal" class="modal">
+            <div class="modal-content">
+                <h2>Enter Your Name</h2>
+                <input type="text" id="playerNameInput" placeholder="Your Name"><br>
+                <button onclick="savePlayerName()">Start Game</button>
+            </div>
+        </div>        
+        <div id="levelModal" class="modal">
+            
+                <button onclick="selectLevel('easy')">Easy(30 seconds) </button>
+                <button onclick="selectLevel('medium')">Medium(20 seconds)</button>
+                <button onclick="selectLevel('hard')">Hard(10 seconds) </button>
+            
+        </div>
+        
+        <div id="board">
+            <div class="tile" id="tile1">
+                <!-- Pop and confetti animation divs will be dynamically created here -->
+            </div>
+            <div class="tile" id="tile2">
+                <!-- Pop and confetti animation divs will be dynamically created here -->
+            </div>
+        </div>
+        <div id="congratsModal" class="modal">
+            <div class="modal-content">
+                <span id="congratsMessage"></span><hr>
+                <span id="congratsMessage1"></span>
+                <div class="animation">
+                    <!-- Add your animation here -->
+                    🎉🎉🎉
+                </div>
+                <button onclick="closeModal()">Continue Playing</button>
+            </div>
+        </div>
+        <div id="gameOverModal"class="gameover">
+            <div class="gameover-content" id="contentover">
+                <span id="gameovermsg"></span><br><br>
+                <span id="gameovermsg1"></span><br>
+                <button id="playAgainButton" onclick="resetGame()">Play Again</button>
+                <button onclick="closeWindow()">Exit</button>
+            </div>
+        </div>
+        
+<!-- More tiles -->
+
+        
+        <script src="ocean.js"></script>
+    </body>
+    </html>

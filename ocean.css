@@ -1,0 +1,234 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+#board{
+    width: 450px;
+    height: 450px;
+    background-color:rgb(52, 155, 199);
+    border: 5px solid rgb(4, 38, 79);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    position: relative;
+}
+/* Level Modal Buttons */
+#levelModal .modal-content button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#levelModal .modal-content button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pop {
+    animation: pop 0.4s ease-in-out;
+    position: absolute;
+    z-index: 105; /* Ensure it’s above other elements */
+}
+
+@keyframes confetti {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px) rotate(360deg);
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    animation: confetti 1s ease-out;
+    z-index: 101; /* Ensure it’s above other elements */
+}
+
+
+h1{
+    text-align: center;
+    color: rgb(4, 38, 79);
+}
+#board img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    /*background-size: cover;
+    background-image: url("./img/chest.png");*/
+    
+}
+/*.blank{
+    opacity: 0;
+}*/
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+/* The Modal (background) */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(2, 2, 2, 0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: inherit;
+    
+    
+}
+#congratsModal button{
+    width: 230px;
+    height: 100px;
+    border-radius: 30px;
+}
+#congratsModal{
+    font-size: xx-large;
+}
+.modal h2{
+    font-size:xx-large;
+    font-weight: bolder;
+    color: #043264d0;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fbfdfd;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+   
+}
+.modal button{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-color: #a5e8e9eb;
+    color: black;
+    font-size: x-large;
+    font-weight: bolder;
+    border-width: 2px;
+}
+.modal-content input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.gameover{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(2, 2, 2, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.gameover-content{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    border: 2px solid black;
+    width: 24%;
+    height: 25%;
+    font-size: x-large;
+    font-weight: bolder;
+
+}
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Button styling */
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.gameover-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 70px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    width: 130px;
+    height: 50px;
+    margin-top: 30px;
+}
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.gameover-content button:hover {
+    background-color: #45a049;
+}
+#playerNameModal button{
+    width: 200px;
+    height: 100px;
+    border-radius: 40px;
+}
